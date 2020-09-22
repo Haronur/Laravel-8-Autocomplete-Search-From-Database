@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AutocompleteSearchDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/autocomplete-textbox', [AutocompleteSearchDBController::class, 'index']);
+Route::post('/search-from-db', [AutocompleteSearchDBController::class, 'searchDB']);
